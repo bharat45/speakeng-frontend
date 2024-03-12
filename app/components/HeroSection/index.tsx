@@ -3,21 +3,25 @@ import Image from 'next/image'
 import styles from './HeroSection.module.css'
 
 import whatsappIcon from '@/public/whatsapp.png'
+import { getHeroData } from '@/app/lib/data';
 
-const HeroSection = () => {
+const HeroSection = async () => {
+
+    const data = await getHeroData();
 
     const redirectToWhatsapp = () => {
-        window.open('https://api.whatsapp.com/send?phone=9711459849&text=hello%20there!', '_blank')
+        const message = data.data.attributes.whatsappMessage.split(' ').join('%20');
+        window.open(`https://api.whatsapp.com/send?phone=${data.data.attributes.phoneNumber}&text=${message}`, '_blank')
     }
 
   return (
     <div className={styles.container}>
         <div className={styles.profile}>
-            <img src="https://res.cloudinary.com/dajjwki2e/image/upload/v1710049962/profile_de4718a3e3.jpg" alt="" style={{borderRadius: '50%'}} />
+            <img src={data.data.attributes.profilePicture.data.attributes.url} alt="" style={{borderRadius: '50%'}} />
         </div>
         <div className={styles.header}>
-            <h1>Welcome!</h1>
-            <h2>lets start learning</h2>
+            <h1>{data.data.attributes.title}</h1>
+            <h2>{data.data.attributes.tagLine}</h2>
             <button className={styles.whatsappButton} onClick={redirectToWhatsapp}>
                 <Image src={whatsappIcon} alt="" />
                 <span>Whatsapp</span>

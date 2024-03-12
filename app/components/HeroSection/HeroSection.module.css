@@ -1,9 +1,9 @@
 .container {
     width: 100vw;
-    background: linear-gradient(to right,#5ababd, #f5a49a);
+    background: linear-gradient(to right,#f5a49a,#0108d7);
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 
 .profile {
@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50px 0px;
 }
 
 .profile > img {
@@ -23,23 +24,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 50px 0px;
 }
 
 .header > h1 {
     font-size: 3rem;
-    color: #0108d7;
+    color: #f5a49a;
     margin: 0;
 }
 
 .header > h2 {
     font-size: 3rem;
-    color: #0108d7;
+    color: #5ababd;
     margin: 0;
 }
 
 .whatsappButton {
     background-color: #64b060;
-    padding: 5px 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     border: none;
@@ -61,12 +63,18 @@
 
 @media screen and (max-width: 768px) {
     .container {
-        background: linear-gradient(#5ababd, #f5a49a);
+        background: linear-gradient(#0108d7, #f5a49a);
     }
     .profile {
         width: 100%;
     }
     .header {
         width: 100%;
+    }
+    .header > h2 {
+        font-size: 2rem;
+    }
+    .whatsappButton {
+        margin-top: 30px;
     }
 }
