@@ -18,7 +18,6 @@ const HeroSection = () => {
     useEffect(() => {  
         const getData = async () => {
             const data = await getHeroData();
-            console.log(data);
             setData(data);
         }
         getData();
