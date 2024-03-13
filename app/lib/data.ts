@@ -1,3 +1,4 @@
+'use server';
 import axios from "axios";
 
 const API_URL = "https://speakeng-backend.onrender.com/api";

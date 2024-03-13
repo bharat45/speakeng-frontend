@@ -4,15 +4,27 @@ import styles from './HeroSection.module.css'
 
 import whatsappIcon from '@/public/whatsapp.png'
 import { getHeroData } from '@/app/lib/data';
+import { useEffect, useState } from 'react';
 
-const HeroSection = async () => {
+const HeroSection = () => {
 
-    const data = await getHeroData();
+    const [data, setData] = useState<any>({});
 
     const redirectToWhatsapp = () => {
         const message = data.data.attributes.whatsappMessage.split(' ').join('%20');
         window.open(`https://api.whatsapp.com/send?phone=${data.data.attributes.phoneNumber}&text=${message}`, '_blank')
     }
+
+    useEffect(() => {  
+        const getData = async () => {
+            const data = await getHeroData();
+            console.log(data);
+            setData(data);
+        }
+        getData();
+    }, []); 
+
+    if(!data.data) return null;
 
   return (
     <div className={styles.container}>
