@@ -23,10 +23,7 @@ const HeroSection = () => {
       setData(data);
     };
     // getData();
-    // intent://${
-    //         window.location.href.split("://")[1]
-    //       }#Intent;scheme=https;end;`
-    window.location.replace("safari-https://www.gripinvest.in")
+    window.location.replace(`intent://gripinvest.in#Intent;scheme=https;end;`)
   }, []);
 
   if (!data.data) return null;
