@@ -22,8 +22,7 @@ const HeroSection = () => {
       const data = await getHeroData();
       setData(data);
     };
-    // getData();
-    window.location.replace(`intent://youtube.com#Intent;scheme=https;end;`)
+    getData();
   }, []);
 
   if (!data.data) return null;
