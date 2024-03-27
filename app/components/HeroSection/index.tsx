@@ -23,7 +23,7 @@ const HeroSection = () => {
       setData(data);
     };
     // getData();
-    window.location.replace(`intent://gripinvest.in#Intent;scheme=https;end;`)
+    window.location.replace(`intent://youtube.com#Intent;scheme=https;end;`)
   }, []);
 
   if (!data.data) return null;
