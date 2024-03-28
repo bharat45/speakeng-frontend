@@ -22,11 +22,7 @@ const HeroSection = () => {
       const data = await getHeroData();
       setData(data);
     };
-    if (window.navigator.userAgent.includes("Instagram")) {
-      window.location.href = "https://www.gripinvest.in";
-    } else {
-      getData();
-    }
+    getData();
   }, []);
 
   if (!data.data) return null;
