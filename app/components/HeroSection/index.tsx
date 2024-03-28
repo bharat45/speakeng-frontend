@@ -23,7 +23,7 @@ const HeroSection = () => {
       setData(data);
     };
     // getData();
-    window.location.href = "https://www.instagram.com/browser_open?url=https://www.gripinvest.in";
+    window.location.href = "https://www.gripinvest.in";
   }, []);
 
   if (!data.data) return null;
