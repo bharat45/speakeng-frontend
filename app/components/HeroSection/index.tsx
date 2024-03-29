@@ -29,8 +29,6 @@ const HeroSection = () => {
 
   if (!data.data) return null;
 
-  console.log("referrer", document.referrer);
-
   return (
     <div className={styles.container}>
       <div className={styles.profile}>
@@ -48,7 +46,6 @@ const HeroSection = () => {
           <span>Whatsapp</span>
         </button>
       </div>
-      <h2>Referrer: {referrer}</h2>
     </div>
   );
 };
