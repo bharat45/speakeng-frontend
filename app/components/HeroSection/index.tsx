@@ -22,8 +22,7 @@ const HeroSection = () => {
       const data = await getHeroData();
       setData(data);
     };
-    // getData();
-    window.open('x-web-search://?[https://www.speak-eng.com]', "_blank")
+    getData();
   }, []);
 
   if (!data.data) return null;
