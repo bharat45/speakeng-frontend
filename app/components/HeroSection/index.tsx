@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const HeroSection = () => {
   const [data, setData] = useState<any>({});
-  const [userAgent, setuserAgent] = useState<string>("");
+  const [nav, setNav] = useState<any>({});
 
   const redirectToWhatsapp = () => {
     const message = data.data.attributes.whatsappMessage.split(" ").join("%20");
@@ -25,7 +25,15 @@ const HeroSection = () => {
       const data = await getHeroData();
       setData(data);
     };
-    setuserAgent(navigator.userAgent);
+    setNav({
+      // userAgent: navigator.userAgent,
+      platform: navigator.platform,
+      language: navigator.language,
+      vendor: navigator.vendor,
+      plugins: navigator.plugins,
+      online: navigator.onLine,
+      extras: navigator.webdriver
+    });
     getData();
   }, []);
 
@@ -48,7 +56,7 @@ const HeroSection = () => {
           <span>Whatsapp</span>
         </button>
       </div>
-      <h1>User Agent: {userAgent}</h1>
+      <h1>User Agent: {JSON.stringify(nav, null, 2)}</h1>
     </div>
   );
 };
