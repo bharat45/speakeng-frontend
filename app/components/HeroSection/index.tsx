@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 
 const HeroSection = () => {
   const [data, setData] = useState<any>({});
-  const referrer = document.referrer;
 
   const redirectToWhatsapp = () => {
     const message = data.data.attributes.whatsappMessage.split(" ").join("%20");
@@ -45,7 +44,7 @@ const HeroSection = () => {
           <span>Whatsapp</span>
         </button>
       </div>
-      <h1>Referrer: {referrer}</h1>
+      <h1>Referrer: {document.referrer}</h1>
     </div>
   );
 };
